@@ -3,17 +3,17 @@ let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x'); // Turns menu icon into an 'X'
+    menuIcon.classList.toggle('bx-x'); // Changes icon to X
     navbar.classList.toggle('active'); // Shows menu
 };
 
-// Close menu when scrolling
+// Close menu on scroll
 window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
 
-// NEW: Close menu when clicking the logo
+// Close menu when clicking the logo
 document.querySelector('.logo').addEventListener('click', () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
