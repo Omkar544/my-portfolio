@@ -1,3 +1,24 @@
+// Toggle Mobile Menu
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x'); // Turns menu icon into an 'X'
+    navbar.classList.toggle('active'); // Shows menu
+};
+
+// Close menu when scrolling
+window.onscroll = () => {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
+
+// NEW: Close menu when clicking the logo
+document.querySelector('.logo').addEventListener('click', () => {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+});
+
 // Typing Animation
 const typingText = document.querySelector('.typing-text');
 const roles = ["AI & Data Science Engineer", "Python Developer", "Problem Solver"];
