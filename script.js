@@ -3,25 +3,26 @@ let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x'); // Changes icon to X
-    navbar.classList.toggle('active'); // Shows menu
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
 };
 
-// Close menu on scroll
+// Close menu on link click or scroll
 window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
 
-// Close menu when clicking the logo
-document.querySelector('.logo').addEventListener('click', () => {
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.onclick = () => {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+    };
 });
 
 // Typing Animation
 const typingText = document.querySelector('.typing-text');
-const roles = ["AI & Data Science Engineer", "Python Developer", "Problem Solver"];
+const roles = ["AI & Data Science Engineer", "Software Developer Trainee", "Full-Stack Developer"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -44,31 +45,25 @@ function typeEffect() {
         roleIndex = (roleIndex + 1) % roles.length;
         setTimeout(typeEffect, 500);
     } else {
-        setTimeout(typeEffect, isDeleting ? 100 : 200);
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
     }
 }
 
 // Theme Switcher
 const themeBtn = document.getElementById('theme-toggle');
 const body = document.body;
-const savedTheme = localStorage.getItem('theme');
 
-if (savedTheme) {
-    body.setAttribute('data-theme', savedTheme);
+themeBtn.onclick = () => {
+    body.classList.toggle('light-theme');
+    const isLight = body.classList.contains('light-theme');
+    themeBtn.classList.replace(isLight ? 'bxs-sun' : 'bxs-moon', isLight ? 'bxs-moon' : 'bxs-sun');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+};
+
+// Load saved theme
+if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-theme');
     themeBtn.classList.replace('bxs-sun', 'bxs-moon');
 }
-
-themeBtn.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    if (currentTheme === 'light') {
-        body.removeAttribute('data-theme');
-        themeBtn.classList.replace('bxs-moon', 'bxs-sun');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        body.setAttribute('data-theme', 'light');
-        themeBtn.classList.replace('bxs-sun', 'bxs-moon');
-        localStorage.setItem('theme', 'light');
-    }
-});
 
 document.addEventListener('DOMContentLoaded', typeEffect);
