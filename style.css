@@ -1,82 +1,37 @@
+/* SYSTEM METRICS ROOT ROUTER */
 :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
     --highlight-color: #00abf0;
 }
 
+/* OVERRIDE TRANSITION CONSTRAINTS FOR THEME SWITCH FLUIDITY */
 body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: 0.3s ease;
+    transition: background-color 0.4s ease, color 0.3s ease;
 }
 
-body.light-theme {
-    --bg-color: #f5f5f5;
-    --second-bg-color: #ffffff;
-    --text-color: #333;
+/* TYPING CURSOR RECTIFICATION BLINK matrix */
+.typing-text::after {
+    content: '|';
+    color: var(--highlight-color);
+    animation: cursorBlink 0.8s infinite steps(2);
 }
 
-/* Experience Timeline */
-.experience-container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    border-left: 2px solid var(--highlight-color);
-    padding-left: 2rem;
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-.exp-card {
-    position: relative;
-    margin-bottom: 3rem;
-    background: var(--second-bg-color);
-    padding: 1.5rem;
-    border-radius: 10px;
-    transition: 0.3s;
+/* SCROLLBAR RECONTRUCTION METRICS */
+::-webkit-scrollbar {
+    width: 10px;
 }
-
-.exp-card:hover {
-    transform: translateX(10px);
+::-webkit-scrollbar-track {
+    background: #081b29;
 }
-
-.exp-dot {
-    position: absolute;
-    left: -41px;
-    top: 20px;
-    width: 16px;
-    height: 16px;
+::-webkit-scrollbar-thumb {
+    background: #112e42;
+    border-radius: 5px;
+    border: 2px solid #081b29;
+}
+::-webkit-scrollbar-thumb:hover {
     background: var(--highlight-color);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--highlight-color);
 }
-
-.exp-header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-}
-
-.company {
-    color: var(--highlight-color);
-    font-weight: 600;
-}
-
-.exp-details {
-    list-style: none;
-    font-size: 0.95rem;
-}
-
-.exp-details li {
-    margin-bottom: 0.5rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.exp-details li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--highlight-color);
-}
-
-/* Other essential styles omitted for brevity, ensure your original hero/project styles are kept */
