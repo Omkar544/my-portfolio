@@ -20,210 +20,320 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-white dark:bg-darkBg text-slate-900 dark:text-white transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-darkBg text-slate-900 dark:text-white transition-colors duration-300 font-sans">
 
-    <header class="fixed w-full z-50 bg-white/80 dark:bg-darkBg/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <header class="fixed w-full top-0 left-0 z-50 bg-white/90 dark:bg-darkBg/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-primary">OG</a>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#about" class="hover:text-primary transition">About</a>
-                <a href="#experience" class="hover:text-primary transition">Experience</a>
-                <a href="#projects" class="hover:text-primary transition">Projects</a>
-                <a href="#contact" class="hover:text-primary transition">Contact</a>
+            <a href="#home" class="text-2xl font-bold tracking-wider text-primary">OMKAR<span class="text-slate-900 dark:text-white">.G</span></a>
+            
+            <div class="hidden md:flex space-x-8 font-semibold tracking-wide">
+                <a href="#home" class="hover:text-primary transition duration-300 text-primary">Home</a>
+                <a href="#about" class="hover:text-primary transition duration-300">About</a>
+                <a href="#experience" class="hover:text-primary transition duration-300">Experience</a>
+                <a href="#projects" class="hover:text-primary transition duration-300">Projects</a>
+                <a href="#skills" class="hover:text-primary transition duration-300">Skills</a>
+                <a href="#contact" class="hover:text-primary transition duration-300">Contact</a>
             </div>
+
             <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2 rounded-full bg-slate-100 dark:bg-darkSecond text-xl">
+                <button id="theme-toggle" class="p-2.5 rounded-xl bg-slate-100 dark:bg-darkSecond text-xl hover:text-primary transition duration-300" aria-label="Toggle Dark Mode">
                     <i class='bx bxs-moon' id="theme-icon"></i>
                 </button>
-                <a href="#contact" class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:shadow-[0_0_15px_rgba(0,171,240,0.5)] transition">Hire Me</a>
-                <button class="md:hidden text-3xl" id="menu-btn"><i class='bx bx-menu'></i></button>
+                <a href="#contact" class="hidden md:inline-block bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-xl font-bold transition duration-300 shadow-md shadow-primary/20">Hire Me</a>
+                <button class="md:hidden text-3xl focus:outline-none" id="menu-btn" aria-label="Open Menu">
+                    <i class='bx bx-menu' id="menu-icon"></i>
+                </button>
             </div>
         </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-darkBg border-b border-slate-200 dark:border-slate-800 px-6 py-4 space-y-4 font-medium shadow-xl">
+            <a href="#home" class="block mobile-link text-primary">Home</a>
+            <a href="#about" class="block mobile-link">About</a>
+            <a href="#experience" class="block mobile-link">Experience</a>
+            <a href="#projects" class="block mobile-link">Projects</a>
+            <a href="#skills" class="block mobile-link">Skills</a>
+            <a href="#contact" class="block mobile-link">Contact</a>
+            <a href="#contact" class="block w-full text-center bg-primary text-white py-3 rounded-xl font-bold">Hire Me</a>
+        </div>
     </header>
 
-    <section id="home" class="pt-32 pb-20 px-6 container mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div class="md:w-1/2 space-y-6">
-            <p class="text-primary font-mono text-lg">Hello, I'm</p>
-            <h1 class="text-5xl md:text-7xl font-bold">Omkar <span class="text-primary">Gore</span></h1>
-            <h3 class="typing-text text-2xl md:text-3xl font-semibold text-slate-600 dark:text-slate-300 min-h-[40px]"></h3>
-            <p class="text-lg text-slate-500 dark:text-slate-400 max-w-xl">
-                AI & Data Science Engineer specialized in building **RAG-based AI systems** and scalable enterprise applications. 
-                Former President of **Central Coding Club (JJMCOE)** and **ITESA**.
+    <section id="home" class="pt-36 pb-24 px-6 container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
+            <p class="text-primary font-mono text-lg font-bold tracking-widest uppercase">Hello, World! I am</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight">Omkar <span class="text-primary">Gore</span></h1>
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-600 dark:text-slate-300 min-h-[40px] flex items-center justify-center md:justify-start">
+                <span class="typing-text border-r-2 border-primary pr-1"></span>
+            </h3>
+            <p class="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                An ambitious AI & Data Science Engineer specialized in constructing high-performance, data-driven web applications, scalable RESTful APIs, and robust Retrieval-Augmented Generation (RAG) ecosystems.
             </p>
-            <div class="flex flex-wrap gap-4 pt-4">
-                <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:scale-105 transition">Get In Touch</a>
-                <a href="#projects" class="border-2 border-primary text-primary px-8 py-3 rounded-xl font-bold hover:bg-primary/10 transition">View Projects</a>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                <a href="#contact" class="w-full sm:w-auto text-center bg-primary hover:bg-primary/90 text-white px-8 py-3.5 rounded-xl font-bold shadow-lg shadow-primary/20 hover:-translate-y-0.5 transition duration-300">Get In Touch</a>
+                <a href="#projects" class="w-full sm:w-auto text-center border-2 border-primary text-primary hover:bg-primary/10 px-8 py-3.5 rounded-xl font-bold hover:-translate-y-0.5 transition duration-300">View Projects</a>
             </div>
         </div>
-        <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-            <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-primary p-2">
-                <img src="profile.jpg" alt="Omkar Gore" class="w-full h-full object-cover rounded-full">
-                <div class="absolute -bottom-2 -right-2 bg-primary text-white p-3 rounded-full text-2xl shadow-lg">🚀</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 bg-white dark:bg-darkBg">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">About <span class="text-primary">Me</span></h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 text-lg text-slate-600 dark:text-slate-400">
-                    <p>
-                        I am an IT student currently pursuing my B.Tech at **Dr. J.J. Magdum College of Engineering**. My technical journey is defined by a passion for transforming raw data into intelligent, actionable insights using Python, Machine Learning, and Deep Learning.
-                    </p>
-                    <p>
-                        During my tenure as a **Software Developer Trainee at Sankey Solutions**, I specialized in architecting complex enterprise systems like "TicketHub Pro" and developing cutting-edge **RAG-based AI assistants**. 
-                    </p>
-                    <p>
-                        Beyond technical development, I am committed to community leadership. Serving as the **President of both the Central Coding Club (JJMCOE) and ITESA**, I have led technical initiatives and mentored peers to foster a culture of innovation.
-                    </p>
-                </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-6 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary transition">
-                        <i class='bx bx-brain text-3xl text-primary mb-2'></i>
-                        <h4 class="font-bold">AI & ML</h4>
-                        <p class="text-xs mt-1">Deep Learning, NLP, & Predictive Modeling</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary transition">
-                        <i class='bx bx-code-alt text-3xl text-primary mb-2'></i>
-                        <h4 class="font-bold">Backend</h4>
-                        <p class="text-xs mt-1">Django, FastAPI, & Scalable APIs</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary transition">
-                        <i class='bx bx-data text-3xl text-primary mb-2'></i>
-                        <h4 class="font-bold">Databases</h4>
-                        <p class="text-xs mt-1">PostgreSQL, SQL & MongoDB</p>
-                    </div>
-                    <div class="p-6 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary transition">
-                        <i class='bx bx-bar-chart-alt-2 text-3xl text-primary mb-2'></i>
-                        <h4 class="font-bold">Analytics</h4>
-                        <p class="text-xs mt-1">Power BI, Matplotlib & Seaborn</p>
-                    </div>
-                </div>
+        <div class="md:w-1/2 flex justify-center">
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 border-primary p-3 shadow-2xl shadow-primary/10">
+                <img src="profile.jpg" alt="Omkar Gore" class="w-full h-full object-cover rounded-full bg-slate-200 dark:bg-darkSecond">
+                <div class="absolute bottom-2 right-2 bg-primary text-white p-3.5 rounded-full text-2xl shadow-xl animate-bounce">🚀</div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-20 bg-slate-50 dark:bg-darkSecond">
+    <section id="about" class="py-24 bg-white dark:bg-darkBg/50 border-y border-slate-200/50 dark:border-slate-800/50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Work <span class="text-primary">Experience</span></h2>
-            <div class="max-w-4xl mx-auto space-y-8 border-l-2 border-primary pl-8 relative">
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 bg-primary rounded-full border-4 border-slate-50 dark:border-darkSecond"></div>
-                    <h3 class="text-xl font-bold">Software Developer Trainee</h3>
-                    <p class="text-primary font-semibold">Sankey Solutions | Nov 2025 - March 2026</p>
-                    <ul class="mt-4 space-y-2 text-slate-500 dark:text-slate-400">
-                        <li>• Architected **TicketHub Pro** using Django and Python.</li>
-                        <li>• Engineered a **RAG-based AI system** for academic assistance.</li>
-                        <li>• Developed features for **TaskFlow** using modern Frontend/Backend stacks.</li>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center tracking-tight mb-4">About <span class="text-primary">Me</span></h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-16"></div>
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-7 space-y-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p>
+                        I am an Information Technology student pursuing my B.Tech degree at <strong>Dr. J.J. Magdum College of Engineering, Jaysingpur</strong>. Driven by analytics and systemic logic, my engineering journey focuses on translating chaotic architectural requirements into production-ready software solutions.
+                    </p>
+                    <p>
+                        Throughout my professional engagement as a <strong>Software Developer Trainee at Sankey Solutions</strong>, I architected scalable backend platforms, implemented dual-database orchestrations, and designed robust enterprise pipelines. 
+                    </p>
+                    <p>
+                        As a leader, I have directed tech communities as the <strong>President of both the Central Coding Club and the IT Engineering Students Association (ITESA)</strong>, driving tech bootcamps, architectural hackathons, and multi-tier tech symposia.
+                    </p>
+                </div>
+                
+                <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                    <div class="p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bx-brain text-3xl text-primary mb-3 block group-hover:scale-110 transition duration-300'></i>
+                        <h4 class="font-bold text-lg mb-1">AI & Data Science</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Deep Learning, RAG Pipelines, & R&D Insights.</p>
+                    </div>
+                    <div class="p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bx-code-alt text-3xl text-primary mb-3 block group-hover:scale-110 transition duration-300'></i>
+                        <h4 class="font-bold text-lg mb-1">Backend Core</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Django ecosystems, FastAPI engines, REST APIs.</p>
+                    </div>
+                    <div class="p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bx-data text-3xl text-primary mb-3 block group-hover:scale-110 transition duration-300'></i>
+                        <h4 class="font-bold text-lg mb-1">Database Engine</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">PostgreSQL clusters & unstructured MongoDB logs.</p>
+                    </div>
+                    <div class="p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bx-bar-chart-alt-2 text-3xl text-primary mb-3 block group-hover:scale-110 transition duration-300'></i>
+                        <h4 class="font-bold text-lg mb-1">Data Visualization</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Power BI dashboard suites, complex DAX logic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-slate-50 dark:bg-darkSecond/40">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center tracking-tight mb-4">Work <span class="text-primary">Experience</span></h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-16"></div>
+            
+            <div class="max-w-3xl mx-auto border-l-2 border-slate-200 dark:border-slate-800 pl-6 sm:pl-10 space-y-12 relative">
+                
+                <div class="relative group">
+                    <div class="absolute -left-[33px] sm:-left-[49px] top-1 w-4 h-4 bg-slate-300 dark:bg-slate-700 rounded-full group-hover:bg-primary group-hover:scale-125 border-4 border-slate-50 dark:border-darkBg transition duration-300"></div>
+                    
+                    <span class="inline-block text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">Nov 2025 - March 2026</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Software Developer Trainee (Data Analyst Intern)</h3>
+                    <p class="text-base font-semibold text-slate-600 dark:text-slate-300 mb-4">Sankey Solutions </p>
+                    <ul class="space-y-2 text-slate-500 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                        <li class="flex items-start"><i class='bx bx-chevrons-right text-primary text-xl mr-2 mt-0.5 flex-shrink-0'></i><span>Architected enterprise ecosystem <strong>"TicketHub Pro"</strong> built on Django/Python.</span></li>
+                        <li class="flex items-start"><i class='bx bx-chevrons-right text-primary text-xl mr-2 mt-0.5 flex-shrink-0'></i><span>Engineered a highly performance-optimized <strong>Retrieval-Augmented Generation (RAG)</strong> AI system to index and query document data.</span></li>
+                        <li class="flex items-start"><i class='bx bx-chevrons-right text-primary text-xl mr-2 mt-0.5 flex-shrink-0'></i><span>Optimized structured PostgreSQL queries to improve operational platform data latency constraints.</span></li>
                     </ul>
                 </div>
-                <div class="relative">
-                    <div class="absolute -left-[41px] top-1 w-5 h-5 bg-primary rounded-full border-4 border-slate-50 dark:border-darkSecond"></div>
-                    <h3 class="text-xl font-bold">AI Intern</h3>
-                    <p class="text-primary font-semibold">Codec Technologies | June 2025 - Aug 2025</p>
-                    <ul class="mt-4 space-y-2 text-slate-500 dark:text-slate-400">
-                        <li>• Engineered and trained AI models for industrial challenges.</li>
-                        <li>• Leveraged Python-based frameworks for predictive modeling.</li>
+
+                <div class="relative group">
+                    <div class="absolute -left-[33px] sm:-left-[49px] top-1 w-4 h-4 bg-slate-300 dark:bg-slate-700 rounded-full group-hover:bg-primary group-hover:scale-125 border-4 border-slate-50 dark:border-darkBg transition duration-300"></div>
+                    
+                    <span class="inline-block text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full mb-2">June 2025 - August 2025</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Artificial Intelligence Intern</h3>
+                    <p class="text-base font-semibold text-slate-600 dark:text-slate-300 mb-4">Codec Technologies Pvt. Ltd.</p>
+                    <ul class="space-y-2 text-slate-500 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                        <li class="flex items-start"><i class='bx bx-chevrons-right text-primary text-xl mr-2 mt-0.5 flex-shrink-0'></i><span>Trained complex AI inference pipelines approved under AICTE industry deployment benchmarks.</span></li>
+                        <li class="flex items-start"><i class='bx bx-chevrons-right text-primary text-xl mr-2 mt-0.5 flex-shrink-0'></i><span>Leveraged predictive models to parse, map, and output data trends efficiently.</span></li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20 container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Featured <span class="text-primary">Projects</span></h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-darkSecond p-6 rounded-2xl shadow-xl hover:-translate-y-2 transition duration-300 border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                <div>
-                    <i class='bx bx-spreadsheet text-4xl text-primary mb-4'></i>
-                    <h3 class="text-xl font-bold mb-2">TicketHub Pro</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Enterprise buyer-vendor platform with RBAC and real-time tracking.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Django</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">React.js</span>
-                    </div>
-                </div>
-                <a href="https://github.com/Omkar544/buyer-vendor-ticket-hub.git" target="_blank" class="text-primary font-bold flex items-center hover:underline">
-                    <i class='bx bxl-github mr-2'></i> View Code
-                </a>
-            </div>
-            <div class="bg-white dark:bg-darkSecond p-6 rounded-2xl shadow-xl hover:-translate-y-2 transition duration-300 border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                <div>
-                    <i class='bx bx-plus-medical text-4xl text-primary mb-4'></i>
-                    <h3 class="text-xl font-bold mb-2">CuraMind App</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">AI healthcare assessments using **XGBoost** and **Vision XAI**.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">FastAPI</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Flutter</span>
-                    </div>
-                </div>
-                <a href="https://github.com/Omkar544/CuraMind.git" target="_blank" class="text-primary font-bold flex items-center hover:underline">
-                    <i class='bx bxl-github mr-2'></i> View Code
-                </a>
-            </div>
-            <div class="bg-white dark:bg-darkSecond p-6 rounded-2xl shadow-xl hover:-translate-y-2 transition duration-300 border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
-                <div>
-                    <i class='bx bx-shield-quarter text-4xl text-primary mb-4'></i>
-                    <h3 class="text-xl font-bold mb-2">PPE Guard Kit</h3>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Real-time Computer Vision system for safety compliance monitoring.</p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">YOLO</span>
-                        <span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">Python</span>
-                    </div>
-                </div>
-                <a href="https://github.com/Omkar544/PPEGuard_Detection_AI.git" target="_blank" class="text-primary font-bold flex items-center hover:underline">
-                    <i class='bx bxl-github mr-2'></i> View Code
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-20 bg-slate-50 dark:bg-darkSecond">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Get In <span class="text-primary">Touch</span></h2>
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <a href="mailto:ogore3414@gmail.com" class="bg-white dark:bg-darkBg p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition">
-                    <i class='bx bxs-envelope text-4xl text-primary mb-2'></i>
-                    <p class="font-semibold">Email</p>
-                    <p class="text-sm text-slate-500">ogore3414@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/omkar-gore-554a081bb/" target="_blank" class="bg-white dark:bg-darkBg p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition">
-                    <i class='bx bxl-linkedin text-4xl text-primary mb-2'></i>
-                    <p class="font-semibold">LinkedIn</p>
-                    <p class="text-sm text-slate-500">Omkar Gore</p>
-                </a>
-                <a href="https://github.com/Omkar544" target="_blank" class="bg-white dark:bg-darkBg p-6 rounded-2xl shadow-lg text-center hover:scale-105 transition">
-                    <i class='bx bxl-github text-4xl text-primary mb-2'></i>
-                    <p class="font-semibold">GitHub</p>
-                    <p class="text-sm text-slate-500">Omkar544</p>
-                </a>
-            </div>
-            <div class="bg-white dark:bg-darkBg p-8 rounded-3xl shadow-2xl">
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Full Name</label>
-                            <input type="text" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-darkSecond border-none focus:ring-2 focus:ring-primary outline-none" placeholder="Omkar Gore">
+    <section id="projects" class="py-24 bg-white dark:bg-darkBg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center tracking-tight mb-4">Featured <span class="text-primary">Projects</span></h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-16"></div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col justify-between overflow-hidden">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <i class='bx bx-spreadsheet text-4xl text-primary'></i>
+                            <span class="text-xs font-mono font-bold text-slate-400 uppercase">Enterprise Stack</span>
                         </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2">Email Address</label>
-                            <input type="email" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-darkSecond border-none focus:ring-2 focus:ring-primary outline-none" placeholder="ogore3414@gmail.com">
+                        <h3 class="text-xl font-bold tracking-tight">TicketHub Pro</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                            A secure, three-tier enterprise portal integrating Django, React.js, and RBAC security constraints to eliminate legacy processing bottleneck workflows
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">Django</span>
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">React.js</span>
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">PostgreSQL</span>
                         </div>
                     </div>
-                    <div>
-                        <label class="block text-sm font-semibold mb-2">Message</label>
-                        <textarea rows="5" class="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-darkSecond border-none focus:ring-2 focus:ring-primary outline-none" placeholder="Let's discuss an internship or project..."></textarea>
+                    <div class="px-6 py-4 border-t border-slate-200/60 dark:border-slate-800/60 bg-slate-100/50 dark:bg-darkBg/30">
+                        <a href="https://github.com/Omkar544/buyer-vendor-ticket-hub.git" target="_blank" class="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 transition duration-300">
+                            <i class='bx bxl-github text-xl mr-1.5'></i> Inspect Code Ecosystem
+                        </a>
                     </div>
-                    <button type="submit" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:shadow-lg transition">Send Message</button>
-                </form>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col justify-between overflow-hidden">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <i class='bx bx-plus-medical text-4xl text-primary'></i>
+                            <span class="text-xs font-mono font-bold text-slate-400 uppercase">Health AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight">CuraMind Ecosystem</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Real-time analytics engine leveraging a Flutter application layer bound to a dual-database FastAPI processing layer mapping XGBoost classifications and Vision XAI engines
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">FastAPI</span>
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">Flutter</span>
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 border-t border-slate-200/60 dark:border-slate-800/60 bg-slate-100/50 dark:bg-darkBg/30">
+                        <a href="https://github.com/Omkar544/CuraMind.git" target="_blank" class="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 transition duration-300">
+                            <i class='bx bxl-github text-xl mr-1.5'></i> Inspect Code Ecosystem
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col justify-between overflow-hidden">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <i class='bx bx-shield-quarter text-4xl text-primary'></i>
+                            <span class="text-xs font-mono font-bold text-slate-400 uppercase">Computer Vision</span>
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight">AI PPE Guard Kit</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                            Continuous real-time safety inspection application applying high-performance computer vision inference matrices to audit industrial worker uniform compliance regulations.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">YOLO V8</span>
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">OpenCV</span>
+                            <span class="px-2.5 py-1 bg-primary/10 text-primary text-xs font-bold rounded-lg">Python</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4 border-t border-slate-200/60 dark:border-slate-800/60 bg-slate-100/50 dark:bg-darkBg/30">
+                        <a href="https://github.com/Omkar544/PPEGuard_Detection_AI.git" target="_blank" class="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 transition duration-300">
+                            <i class='bx bxl-github text-xl mr-1.5'></i> Inspect Code Ecosystem
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-slate-500 text-sm">
-        <p>© 2026 Omkar Gore. All rights reserved.</p>
+    <section id="skills" class="py-24 bg-slate-50 dark:bg-darkSecond/40">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center tracking-tight mb-4">Skills Matrix & <span class="text-primary">Tooling</span></h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-16"></div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white dark:bg-darkBg p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 text-primary border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center"><i class='bx bx-server mr-2'></i> Backend Core</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>Django Engine</span><span>90%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>FastAPI Routing</span><span>85%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>RESTful API Architecture</span><span>90%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div></div></div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-darkBg p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 text-primary border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center"><i class='bx bx-code mr-2'></i> Languages</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>Python Data Engineering</span><span>95%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>Java (OOP Structures)</span><span>80%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>SQL Queries</span><span>85%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div></div></div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-darkBg p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 text-primary border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center"><i class='bx bx-line-chart mr-2'></i> Analytics & AI</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>Machine/Deep Learning /span><span>85%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>Power BI Dashboards</span><span>90%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>RAG Processing Matrix</span><span>80%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div></div></div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-darkBg p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4 text-primary border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center"><i class='bx bx-hdd mr-2'></i> Databases & Cloud</h3>
+                    <div class="space-y-3">
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>PostgreSQL Relational</span><span>90%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 90%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>MongoDB NoSQL Logs</span><span>80%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 80%"></div></div></div>
+                        <div><div class="flex justify-between text-xs font-semibold mb-1"><span>Cloud Security Topology</span><span>75%</span></div><div class="w-full bg-slate-200 dark:bg-darkSecond h-1.5 rounded-full"><div class="bg-primary h-1.5 rounded-full" style="width: 75%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white dark:bg-darkBg">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center tracking-tight mb-4">Get In <span class="text-primary">Touch</span></h2>
+            <div class="w-16 h-1 bg-primary mx-auto rounded-full mb-16"></div>
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-4 space-y-4 w-full">
+                    <a href="mailto:ogore3414@gmail.com" class="block p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bxs-envelope text-3xl text-primary mb-2 block group-hover:scale-105 transition'></i>
+                        <p class="font-bold text-base">Direct Channels</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-mono">ogore3414@gmail.com</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/omkar-gore-554a081bb/" target="_blank" class="block p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bxl-linkedin text-3xl text-primary mb-2 block group-hover:scale-105 transition'></i>
+                        <p class="font-bold text-base">LinkedIn Network</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">omkar-gore-554a081bb</p>
+                    </a>
+                    <a href="https://github.com/Omkar544" target="_blank" class="block p-5 bg-slate-50 dark:bg-darkSecond rounded-2xl border border-slate-200/60 dark:border-slate-800/60 hover:border-primary dark:hover:border-primary transition group duration-300">
+                        <i class='bx bxl-github text-3xl text-primary mb-2 block group-hover:scale-105 transition'></i>
+                        <p class="font-bold text-base">GitHub Repositories</p>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-mono">Omkar544</p>
+                    </a>
+                </div>
+                
+                <div class="lg:col-span-8 bg-slate-50 dark:bg-darkSecond p-6 sm:p-10 rounded-3xl border border-slate-200/60 dark:border-slate-800/60 shadow-xl w-full">
+                    <form class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">Identity Name</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="Omkar Gore">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">Routing Email</label>
+                                <input type="email" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="ogore3414@gmail.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-slate-300">Payload Message</label>
+                            <textarea rows="5" required class="w-full px-4 py-3 rounded-xl bg-white dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition" placeholder="Let's build something exceptional..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition duration-300 hover:-translate-y-0.5">Transmit Secure Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 text-center text-slate-400 text-xs sm:text-sm bg-white dark:bg-darkBg/30">
+        <p class="font-mono">&copy; 2026 Omkar Gore. Compiled with Tailwind CSS engineering metrics.</p>
     </footer>
 
     <script src="script.js"></script>
